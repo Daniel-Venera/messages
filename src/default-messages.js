@@ -1,6 +1,6 @@
 import { uuid } from './utils'
 
-const messages = [
+const defaultMessages = [
   {
       id: uuid(),
       content: 'message 1',
@@ -17,4 +17,4 @@ const messages = [
       privacy: 'public'
   },
 ]
-export default messages
+export default defaultMessages

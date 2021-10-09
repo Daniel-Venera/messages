@@ -1,7 +1,7 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import defaultMessages from './default-messages'
-import { saveStatePlugin } from './utils'
+import { saveStatePlugin, uuid } from './utils'
 
 Vue.use(Vuex)
 
@@ -13,7 +13,11 @@ export default new Vuex.Store({
     messages
   },
   mutations: {
+    CREATE_MESSAGE(state, { body }) {
+      state.messages.push({
+        ...body,
+        id: uuid(),
+      })
+    },
   },
-  actions: {
-  }
 })
